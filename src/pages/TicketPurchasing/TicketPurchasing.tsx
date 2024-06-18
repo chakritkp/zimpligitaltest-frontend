@@ -1,12 +1,13 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 import Payment from "./component/Payment";
+import Total from "./component/Total";
 
 const TicketPurchasing = () => {
   return (
     <Container maxWidth="lg" component="main">
       <Grid container spacing={2}>
-        <Grid item xs={8}>
+        <Grid item xs={7}>
           <Box
             sx={{
               border: "1px solid #bdbdbd",
@@ -39,15 +40,8 @@ const TicketPurchasing = () => {
             <Payment />
           </Box>
         </Grid>
-        <Grid item xs={4}>
-          <Box
-            sx={{
-              border: "1px solid #bdbdbd",
-              borderRadius: "4px",
-            }}
-          >
-            Total
-          </Box>
+        <Grid item xs={5}>
+          <Total />
         </Grid>
       </Grid>
     </Container>

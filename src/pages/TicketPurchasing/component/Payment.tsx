@@ -38,6 +38,10 @@ const Payment = () => {
           return {
             ...card,
             checked: card.id === id ? value : false,
+            edit:
+              !card.cardNumber && !card.firstName && !card.lastName && !card.exp
+                ? true
+                : false,
           };
         } else {
           return card.id === id ? { ...card, [name]: value } : card;
@@ -119,6 +123,7 @@ const Payment = () => {
           ?.filter((card: any) => card.deleted !== true)
           ?.map((card) => (
             <Ticket
+              key={card.id}
               cardData={card}
               handleChange={(id: number, name: string, value: any) =>
                 handleChange(id, name, value)
